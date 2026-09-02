@@ -1,0 +1,25 @@
+# Phy 2 manual-curation environment (Python 3.11).
+#
+# Conda is STRONGLY recommended for Phy (see environment-phy2.yml) because PyQt5 and
+# PyOpenGL install far more reliably from conda-forge than from pip. Use this pip
+# list only if you cannot use conda:
+#   conda create -n phy2 -y python=3.11
+#   conda activate phy2
+#   pip install -r requirements-phy2.txt
+
+phy==2.1.0rc1
+phylib==2.7.0
+numpy>=1.26
+scipy==1.17.1
+matplotlib
+PyQt5==5.15.11
+PyOpenGL
+h5py
+dask
+cython
+joblib
+requests
+responses==0.26.2
+scikit-learn
+tqdm
+traitlets

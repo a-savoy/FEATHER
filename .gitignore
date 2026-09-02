@@ -1,0 +1,19 @@
+# Python environment (recreate with: python3 -m venv .venv && pip install -r requirements.txt)
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Recordings and analysis output — data, not code
+song_data/
+test_data/
+output/
+*.sqlite
+app_log.txt
+
+# Written by the vendored training script when it is imported (see callgen/SOURCE.md)
+callgen/plots/
+
+# macOS
+.DS_Store

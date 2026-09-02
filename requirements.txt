@@ -1,0 +1,24 @@
+# FEATHER main environment (Python 3.11) — playback control + analysis + Kilosort4.
+# Recommended install is the conda file: `conda env create -f environment-feather.yml`.
+# These are the exact tested versions.
+#
+# IMPORTANT: PyTorch is intentionally NOT listed here so you install the correct
+# CUDA build separately (Kilosort4 needs the GPU build):
+#   pip install torch==2.5.1+cu121 torchaudio==2.5.1+cu121 --index-url https://download.pytorch.org/whl/cu121
+
+numpy==1.26.4
+scipy==1.17.1
+pandas==3.0.3
+soundfile==0.13.1
+sounddevice==0.5.6      # Sound Bench: microphone input (PortAudio)
+pyserial==3.5
+matplotlib==3.7.3
+Pillow==11.3.0
+scikit-learn==1.8.0
+numba==0.65.1
+probeinterface==0.3.2
+kilosort==4.1.7
+faiss-cpu==1.14.3
+nbformat==5.10.4
+jupyterlab==4.5.7
+ipykernel==7.2.0

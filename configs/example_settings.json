@@ -1,0 +1,10 @@
+{
+  "repeats": "2",
+  "gaps": "1, 2, 3",
+  "lead_in": "0",
+  "tail": "0",
+  "seed": "42",
+  "shuffle": true,
+  "no_repeat": false,
+  "gate_output": "0"
+}

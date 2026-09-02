@@ -1,0 +1,28 @@
+# Phy 2 manual-curation environment. Kept separate from `feather` because Phy pins
+# older Qt/OpenGL packages that conflict with the Kilosort4 stack.
+#   conda env create -f environment-phy2.yml
+#   conda activate phy2
+#   phy --version
+name: phy2
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - cython
+  - dask
+  - h5py
+  - joblib
+  - matplotlib
+  - numpy
+  - pillow
+  - pip
+  - pyopengl
+  - pyqt
+  - qtconsole
+  - requests
+  - responses
+  - scikit-learn
+  - scipy
+  - traitlets
+  - pip:
+      - phy==2.1.0rc1
