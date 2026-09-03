@@ -2,7 +2,7 @@
 
 **Friendly Ephys Acquisition Terminal Helping Everyone Record**
 
-FEATHER records bird vocalizations or synthesize begging calls, then
+FEATHER records bird vocalizations or synthesizes begging calls, then
 runs a randomized **audio-playback experiment** during an extracellular
 electrophysiology recording (or as a behaviour-only session), then aids in analysis:
 record the birds → segment the calls you want into stimuli (or generate new ones) →
