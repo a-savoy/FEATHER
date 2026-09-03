@@ -66,15 +66,13 @@ this rig the recorded audio sits on the timing marker to within a single sample
 
 ---
 
-## Sound Bench — make the sounds, then choose them
+## Make the sounds, then choose them
 
-The first three tabs cover what a songbird lab would otherwise do in Sound Analysis Pro,
-plus something it cannot do at all. They come first because they happen first: you make
-sounds — recorded or synthetic — collect them in the library, and only then design an
-experiment with them.
+The tabs either emulates basic functions provided by Sound Analysis Pro to record audio, or synthesizes generated calls.
+Then from a library of sounds, you can design an experiment with them.
 
 **Tab 1 — Record Vox.** One input channel per bird. A file is saved whenever a bird calls,
-starting a couple of seconds *before* the sound (a ring buffer, so onsets are never
+starting two seconds *before* the sound (a ring buffer, so onsets are never
 clipped) and closing after a second of silence. Every file is then measured and kept
 only if it is really a vocalization: enough calls, of plausible duration, forming a long
 enough bout, and not mostly low-frequency cage noise. **Rejected files are moved to a
@@ -88,12 +86,12 @@ song_data/A2N3/2026-09-02/A2N3_20260902_094413_218_ch1.wav
                           events.csv            (every decision, kept or not)
 ```
 
-**Tab 2 — Generate Calls.** Synthesizes begging calls with a conditional VAE trained on 32,647 real calls from
-9 chicks aged 4–15 days. Move the sliders, press **Listen** to hear the call and see its
+**Tab 2 — Generate Calls.** Synthesizes begging calls with a conditional variational autoencoder (VAE) 
+trained on 32,647 real calls from 9 chicks aged 4–15 days. Move the sliders, press **Listen** to hear the call and see its
 sonogram, and **Save as stimulus** to put it in your sound folder — from there it is an
 ordinary WAV and every later tab treats it exactly like a recording.
 
-Two things make it useful rather than a toy:
+Two things make it especially useful:
 
 - **Every preview is measured** with the same code as tab 2, and the numbers are shown
   under the sonogram. So you can compare a generated call against your real recordings
@@ -104,24 +102,12 @@ Two things make it useful rather than a toy:
   stimulus is as reproducible as a recorded one is traceable.
 
 **Make a graded set** generates one stimulus per step of a chosen setting with everything
-else — including the seed — held fixed. That is how a supernormal series is built.
-
-Two honest caveats from measuring the output:
-
-- **Generated calls are more tonal than real ones.** Median Wiener entropy runs about
-  −3.0 against −1.2 to −2.2 for the real begging calls in `stimuli/`. That is the
-  Griffin-Lim phase reconstruction smoothing away noise, and it is audible as a cleaner,
-  purer call. Worth knowing if noisiness is the variable you care about.
-- **Grade on brightness, not pitch.** The brightness (centroid) slider moves the measured
-  spectral centre monotonically. The pitch (F0) slider changes the call clearly, but
-  because it moves along a direction orthogonalized against centroid, the measured centre
-  *falls* as F0 rises from 2 to 5 kHz and then flattens. It is fine for "make this one
-  different"; it is not a ruler.
+else fixed (including the seed). That is how a supernormal series is built.
 
 **Tab 3 — Sound Library.** Browse everything you have recorded or generated, see each one's sonogram with its calls
 marked, and plot any of the seven features under it. Tune what counts as a call with the
 threshold and duration settings. Then drag across the sonogram, press *Play* to check it,
-and *Use as stimulus* — the clip is faded, normalised, resampled to match your sound
+and *Use as stimulus* — the clip is faded, normalized, resampled to match your sound
 folder, and written there, where **tab 3 picks it up immediately**. Every stimulus is
 logged in `stimulus_provenance.csv` with the recording and offsets it came from.
 
@@ -160,23 +146,10 @@ choosing stimuli, so avoid it while a recording is running.
 
 Tab 5 asks where the sound comes out. The **Harp Sound Card** is the ephys path: it puts a
 sample-accurate marker on ADC1, which is what every timing claim in this package rests on.
-**This computer's speakers** is for behaviour-only sessions before the ephys stage — same
+**This computer's speakers** is for behavior-only sessions before the ephys stage — same
 play order, same logs, same saved experiment file, but onset times are software times
 (good to a few milliseconds) with no marker on an acquisition clock. Use the card whenever
 you are recording neurons.
-
-### How much to trust the numbers
-
-The features follow the definitions in the SAP2011 manual and are checked against
-signals whose answers are known by construction — a pure tone must read as its own
-frequency, white noise must sit near zero entropy, a 700 Hz harmonic stack must report
-700 Hz. Run `python test_song_features.py` to see all of it.
-
-They will **correlate with** Sound Analysis Pro rather than equal it: SAP's constants are
-not public. If you have previously scored data in SAP, keep scoring it in SAP, and do not
-mix numbers from the two tools in one analysis. To calibrate, export a syllable table
-from SAP for a few files and compare — feature by feature — against the CSV that
-*Save measurements as CSV* writes.
 
 ---
 
