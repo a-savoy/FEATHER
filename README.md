@@ -2,11 +2,10 @@
 
 **Friendly Ephys Acquisition Terminal Helping Everyone Record**
 
-FEATHER records your birds, measures their calls, and can synthesize new ones, then
-runs a randomized **audio-playback experiment** — either during an extracellular
-electrophysiology recording or as a behaviour-only session — and takes you all the way
-through analysis:
-record the birds → cut the calls you want into stimuli (or generate new ones) →
+FEATHER records bird vocalizations or synthesize begging calls, then
+runs a randomized **audio-playback experiment** during an extracellular
+electrophysiology recording (or as a behaviour-only session), then aids in analysis:
+record the birds → segment the calls you want into stimuli (or generate new ones) →
 design the play order →
 play each stimulus through a Harp Sound Card → capture a sample-accurate onset marker
 on an Open Ephys ADC channel → detect and identify every sound → spike-sort with
