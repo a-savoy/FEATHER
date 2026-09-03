@@ -4,7 +4,7 @@
 
 FEATHER records bird vocalizations or synthesizes begging calls, then
 runs a randomized **audio-playback experiment** during an extracellular
-electrophysiology recording (or as a behaviour-only session), then aids in analysis:
+electrophysiology recording (or as a behavior-only session), then aids in analysis:
 record the birds → segment the calls you want into stimuli (or generate new ones) →
 design the play order →
 play each stimulus through a Harp Sound Card → capture a sample-accurate onset marker
