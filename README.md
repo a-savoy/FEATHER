@@ -22,7 +22,7 @@ There are two equivalent front ends over the exact same tested code:
 
 ## Why the timing is trustworthy
 
-The load-bearing design decision: **the sound card's output is recorded on the
+**The sound card's output is recorded on the
 same acquisition board, on the same clock, as the neural data.**
 
 - A digital "sound-playing" gate from the Harp card is wired to **ADC1**. Its
@@ -30,7 +30,7 @@ same acquisition board, on the same clock, as the neural data.**
 - A copy of the audio is wired to **ADC2**, so the actual waveform lives in the
   recording and is used to confirm *which* sound played and *exactly when*.
 
-Because everything shares one clock there is no drift and no unknown offset. On
+Because everything shares one clock, there is no drift and no unknown offset. On
 this rig the recorded audio sits on the timing marker to within a single sample
 (~0.03 ms). See **HARDWARE.md** for the full wiring.
 
