@@ -9,7 +9,7 @@ record the birds → segment the calls you want into stimuli (or generate new on
 design the play order →
 play each stimulus through a Harp Sound Card → capture a sample-accurate onset marker
 on an Open Ephys ADC channel → detect and identify every sound → spike-sort with
-**Kilosort4** → view PSTHs → hand off to **Phy** or **Jupyter**. It is built for a neuroscience student with no coding experience: a
+**Kilosort4** → view PSTHs → hand off to **Phy2** or **Jupyter**. It is built for a neuroscience student with no coding experience: a
 point-and-click GUI, plain-language labels, and sensible fixed defaults.
 
 There are two equivalent front ends over the exact same tested code:
