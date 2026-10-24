@@ -5,7 +5,7 @@
 FEATHER records bird vocalizations or synthesizes begging calls, then
 runs a randomized **audio-playback experiment** during an extracellular
 electrophysiology recording (or as a behavior-only session), then aids in analysis:
-record the birds → segment the calls you want into stimuli (or generate new ones) →
+record the birds → segment the vocalizations you want into stimuli (or generate new ones) →
 design the play order →
 play each stimulus through a Harp Sound Card → capture a sample-accurate onset marker
 on an Open Ephys ADC channel → detect and identify every sound → spike-sort with
@@ -20,7 +20,7 @@ There are two equivalent front ends over the exact same tested code:
 
 ---
 
-## Why the timing is trustworthy
+## Synchronization
 
 **The sound card's output is recorded on the
 same acquisition board, on the same clock, as the neural data.**
@@ -36,7 +36,7 @@ this rig the recorded audio sits on the timing marker to within a single sample
 
 ---
 
-## What's in this package
+## Contents of this package
 
 | Path | What it is |
 |------|-----------|
@@ -66,9 +66,9 @@ this rig the recorded audio sits on the timing marker to within a single sample
 
 ---
 
-## Make the sounds, then choose them
+## Overview
 
-The tabs either emulates basic functions provided by Sound Analysis Pro to record audio, or synthesizes generated calls.
+The first tabs either emulate basic functions provided by Sound Analysis Pro to record audio, or generated synthesized calls.
 Then from a library of sounds, you can design an experiment with them.
 
 **Tab 1 — Record Vox.** One input channel per bird. A file is saved whenever a bird calls,
